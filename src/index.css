@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+#blackCheckbox:checked + label::before {
+    content: '';
+    display: inline-block;
+    width: 0.75rem;
+    height: 1.25rem;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(-45deg);
+    margin-right: 0.25rem;
+  }
