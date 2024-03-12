@@ -27,17 +27,17 @@ export const Dashboard = () => {
 
   return (
     <>
-      <div className=" flex gap-3 mx-4 my-3">
+      <div className=" flex gap-3 md:mx-4 mx-2 md:my-3 my-1">
         <div
           className={`border px-3 py-3 min-h-[95vh] ${
             dashToggle ? "w-80" : "w-20"
-          } border-gray-300 border-opacity-60 rounded-xl  bg-white`}
+          } border-gray-300 border-opacity-60 rounded-xl  left-2 top-2  bg-white`}
         >
           <div className="flex gap-3 justify-between items-center">
             <div className="flex items-center">
-              <button onClick={() => setDashToggle(!dashToggle)}>
+              <button className="md:w-12 w-8" onClick={() => setDashToggle(!dashToggle)}>
                 {" "}
-                <img className="w-12" src="/images/logo.png" alt="" />
+                <img className="md:w-12 w-8" src="/images/logo.png" alt="" />
               </button>
 
               {dashToggle && (
@@ -45,32 +45,32 @@ export const Dashboard = () => {
                   <span className="text-xs font-semibold  text-gray-600">
                     INC
                   </span>
-                  <span className="text-base font-semibold">InnovateHub</span>
+                  <span className="md:text-base text-sm font-semibold">InnovateHub</span>
                 </div>
               )}
             </div>
             {dashToggle && (
-              <img className="w-10 mb-2" src="/images/profile.png" alt="" />
+              <img className="md:w-10 w-6 mb-2" src="/images/profile.png" alt="" />
             )}
           </div>
           {dashToggle ? (
             <div className=" py-2 border border-gray-300 rounded-xl mt-3 border-opacity-30">
-              <div className="flex mx-2 my-1  py-2 hover:bg-gray-100 px-2 rounded-xl cursor-pointer items-center gap-2">
+              <div className="flex mx-1 md:mx-2 my-1  py-2 hover:bg-gray-100 px-2 rounded-xl cursor-pointer items-center gap-2">
                 <CiPen size={18} />{" "}
-                <span className="font-medium text-base">Design Team</span>
+                <span className="font-medium text-sm md:text-base">Design Team</span>
               </div>
-              <div className="flex  mx-2 my-1  py-2 hover:bg-gray-100 px-2 rounded-xl cursor-pointer items-center gap-2">
+              <div className="flex  mx-1 md:mx-2 my-1  py-2 hover:bg-gray-100 px-2 rounded-xl cursor-pointer items-center gap-2">
                 <TbSpeakerphone size={18} />{" "}
-                <span className="font-medium text-base">Marketing team</span>
+                <span className="font-medium text-sm md:text-base">Marketing team</span>
               </div>
-              <div className="flex  mx-2 my-1 py-2 hover:bg-gray-100 px-2 rounded-xl cursor-pointer items-center gap-2">
+              <div className="flex  mx-1 md:mx-2 my-1 py-2 hover:bg-gray-100 px-2 rounded-xl cursor-pointer items-center gap-2">
                 <IoCode size={18} />{" "}
-                <span className="font-medium text-base">Development Team</span>
+                <span className="font-medium text-sm md:text-base">Development Team</span>
               </div>
               <div className="border-t"></div>
-              <div className="flex  mx-2 my-1 px-2 py-2 hover:bg-gray-100  rounded-xl cursor-pointer items-center gap-2">
+              <div className="flex  mx-1 md:mx-2 my-1 px-2 py-2 hover:bg-gray-100  rounded-xl cursor-pointer items-center gap-2">
                 <CgAddR size={18} />{" "}
-                <span className="font-medium text-base">Create Team</span>
+                <span className="font-medium text-sm md:text-base">Create Team</span>
               </div>
             </div>
           ) : (
@@ -103,11 +103,42 @@ export const Dashboard = () => {
                   <GoPlus size={16} />
                 )
               ) : null}
+             
             </div>
 
-            {/* <div className="flex justify-between py-2 items-center">
+             {dashToggle ? (
+                folderTog ? (
+                  <div className="flex flex-col  mb-4">
+
+                    <div className="flex justify-between py-2 items-center">
             <span className="flex items-center font-medium gap-2"><GoFileDirectory size={16} />  <span className="font-semibold pb-1">Products</span> </span>
-            </div> */}
+            </div>
+
+            <div className="flex justify-between py-2 items-center">
+            <span className="flex items-center font-medium gap-2"><GoFileDirectory size={16} />  <span className="font-semibold pb-1">Sales</span> </span>
+            </div>
+
+            <div className="flex justify-between py-2 items-center">
+            <span className="flex items-center font-medium gap-2"><GoFileDirectory size={16} />  <span className="font-semibold pb-1">Design</span> </span>
+            </div>
+
+            <div className="flex justify-between py-2 items-center">
+            <span className="flex items-center font-medium gap-2"><GoFileDirectory size={16} />  <span className="font-semibold pb-1">Office</span> </span>
+            </div>
+
+            <div className="flex justify-between py-2 items-center">
+            <span className="flex items-center font-medium gap-2"><GoFileDirectory size={16} />  <span className="font-semibold pb-1">Logo</span> </span>
+            </div>
+
+                  </div>
+                ) : (
+                 null
+                )
+              ) : null}
+
+         
+
+
           </div>
 
           <div className="my-1 flex flex-col gap-3 ">
@@ -206,7 +237,7 @@ export const Dashboard = () => {
             </div>
           </div>
           <div className="border-t  border-gray-300 border-opacity-60">
-            <div className="grid  grid-cols-7  border-b border-gray-300 ">
+            <div className="grid  grid-cols-6  border-b border-gray-300 ">
               <div className="px-4 flex items-center justify-between py-2   ">
                 <div className="flex items-center justify-center gap-3">
                   <input type="checkbox" id="blackCheckbox" className="h-5" />
@@ -219,7 +250,7 @@ export const Dashboard = () => {
                   <GoPlus size={20} />
                 </span>
               </div>
-              <div className="px-2 py-2 font-semibold text-gray-600 text-base  border-l border-gray-300 ">
+              <div className="px-2 py-2  font-semibold text-gray-600 text-base  border-l border-gray-300 ">
                 Description
               </div>
               <div className="px-2 py-2 font-semibold text-gray-600 text-base  border-l border-gray-300 ">
@@ -231,15 +262,57 @@ export const Dashboard = () => {
               <div className="px-2 py-2 font-semibold text-gray-600 text-base  border-l border-gray-300 ">
                 Tags
               </div>
-              <div className="px-2 py-2  font-semibold text-gray-600 text-base border-l border-gray-300 ">
-                Next meeting
-              </div>
-              <div className="px-2 py-2  flex items-center font-semibold text-gray-600 text-base border-l border-gray-300 ">
-                <GoPlus size={20} />
+              <div className="flex items-center justify-between font-semibold text-gray-600 text-base border-l border-gray-300 ">
+               <span className="px-2 w-4/5 py-2 border-r border-gray-300"> Next meeting</span>
+              
+                <div className=" w-1/5 flex justify-center items-center"><GoPlus size={20} /></div>
+              
               </div>
             </div>
 
-            <div className="grid   grid-cols-7  border-b border-gray-300">
+            <div className="grid  grid-cols-6  border-b border-gray-300 ">
+              <div className="px-4 flex items-center justify-between py-2   ">
+                <div className="flex items-center justify-center gap-3">
+                  <input type="checkbox" id="blackCheckbox" className="h-5" />
+
+                  <span className="flex items-center font-semibold text-gray-600 gap-1 text-sm pb-1">
+                    <img src="/images/wix.png" className="w-5" alt="" /> <span>Wix</span>
+                  </span>
+                </div>
+                
+              </div>
+              <div className="px-2 py-2 font-semibold text-gray-600 text-sm  border-l border-gray-300 ">
+                Develop a personalized...
+              </div>
+              <div className="px-2 py-2 font-semibold text-gray-600 text-sm  border-l border-gray-300 ">
+                
+               <div className="flex ">
+               {
+                  Array.from({ length: 6 }, (_, index) => index).map((e)=>(
+                    <img  src="/images/profile.png" className="w-6 relative" alt="" />
+                  ))
+                }
+               </div>
+              </div>
+              <div className="px-2 py-2 font-semibold text-gray-600 text-sm  border-l border-gray-300 ">
+                Automation
+              </div>
+              <div className="px-2 py-2 font-semibold text-gray-600 text-sm  border-l border-gray-300 ">
+                #Digital Transformation
+              </div>
+              <div className="flex items-center justify-between font-semibold text-gray-600 text-base border-l border-gray-300 ">
+               <span className="px-2 w-4/5 py-2 border-r border-gray-300">in 30 minutes</span>
+              
+                <div className=" w-1/5 flex justify-center items-center"></div>
+              
+              </div>
+             
+            </div>
+            
+
+
+
+            <div className="grid   grid-cols-6  border-b border-gray-300">
               <div className="px-2  text-right py-2 font-semibold text-gray-600 text-sm   border-gray-300 ">
                 10 count
               </div>
@@ -267,8 +340,13 @@ export const Dashboard = () => {
                   <span>Add calculation</span>
                 </div>
               </div>
-              <div className="px-2 py-2 font-semibold text-gray-600 text-base  border-l border-gray-300 "></div>
-              <div className="px-2 py-2 font-semibold text-gray-600 text-base  border-l border-gray-300 "></div>
+              <div className="flex items-center justify-between font-semibold text-gray-600 text-base border-l border-gray-300 ">
+               <span className="px-2 w-4/5 py-5 border-r border-gray-300"> </span>
+              
+                <div className=" w-1/5 flex justify-center items-center"></div>
+              
+              </div>
+              
             </div>
           </div>
         </div>
